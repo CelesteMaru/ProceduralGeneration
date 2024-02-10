@@ -10,10 +10,10 @@ class GroundTile extends Tile{
         const geometry = new THREE.BufferGeometry();
 
         const vertices = new Float32Array( [
-            position, position,  position, // v0
-            1.0 + position, position,  position, // v1
-            1.0 + position,  1.0 + position,  position, // v2
-            position,  1.0 + position,  position, // v3
+            position[0], position[1],  position[2], // v0
+            1.0 + position[0], position[1],  position[2], // v1
+            1.0 + position[0],  1.0 + position[1],  position[2], // v2
+            position[0],  1.0 + position[1],  position[2], // v3
         ] );
 
         const indices = [

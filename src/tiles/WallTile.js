@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import Tile from "./Tile.js";
 
-class WallTine extends Tile{
+class WallTile extends Tile{
     constructor(rotation) {
         super(rotation);
     }
@@ -13,24 +13,24 @@ class WallTine extends Tile{
         const wall_end = 0.55; 
 
         const vertices = new Float32Array( [
-            position, position,  position, // v0
-            position + 1.0, position ,  position, // v1
-            position , position + wall_start , position, // v2
-            position + 1.0, position + wall_start, position, // v3
-            position , position + wall_start , position + 1, // v4
-            position + 1.0, position + wall_start, position + 1, // v5
-            position , position + wall_end , position + 1, // v6
-            position + 1.0 , position + wall_end, position + 1, // 7
-            position , position + wall_end, position, // 8
-            position + 1.0, position + wall_end, position, // 9
-            position , position + 1.0,  position, //10
-            position + 1.0,  position +1.0,  position, //11
+            position[0], position[1],  position[2], // v0
+            position[0] + 1.0, position[1] ,  position[2], // v1
+            position[0] , position[1] + wall_start , position[2], // v2
+            position[0] + 1.0, position[1] + wall_start, position[2], // v3
+            position[0] , position[1] + wall_start , position[2] + 1, // v4
+            position[0] + 1.0, position[1] + wall_start, position[2] + 1, // v5
+            position[0] , position[1] + wall_end , position[2] + 1, // v6
+            position[0] + 1.0 , position[1] + wall_end, position[2] + 1, // 7
+            position[0] , position[1] + wall_end, position[2], // 8
+            position[0] + 1.0, position[1] + wall_end, position[2], // 9
+            position[0] , position[1] + 1.0,  position[2], //10
+            position[0] + 1.0,  position[1] +1.0,  position[2], //11
 
         ] );
 
         const indices = [
-            0, 1, 3,
-            3, 2, 0,
+            0, 1, 2,
+            1, 3, 2,
             2, 3, 5,
             5, 4, 2,
             4, 5, 6,
@@ -47,4 +47,4 @@ class WallTine extends Tile{
     }
 }
 
-export default WallTine;
+export default WallTile;
